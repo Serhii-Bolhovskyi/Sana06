@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model List<Skill>
 
 <div class="container mx-auto p-3">
     <div class="d-flex gap-5">
@@ -33,24 +34,12 @@
     <div class="d-flex flex-column mt-3">
         <h1 class="fs-1">Skills</h1>
         <div class="d-flex gap-3 fs-5 parent flex-wrap">
+            @foreach (var skill in Model)
+            {
             <div class="border d-inline-block px-3 py-2 rounded-3 hover:scale-105">
-                <p>JavaScript</p>
+                <p>@skill.Name</p>
             </div>
-            <div class="border d-inline-block px-3 py-2 rounded-3 hover:scale-105">
-                <p>HTML</p>
-            </div>
-            <div class="border d-inline-block px-3 py-2 rounded-3 hover:scale-105">
-                <p>CSS</p>
-            </div>
-            <div class="border d-inline-block px-3 py-2 rounded-3 hover:scale-105">
-                <p>TailwindCss</p>
-            </div>
-            <div class="border d-inline-block px-3 py-2 rounded-3 hover:scale-105">
-                <p>C# and ASP.NET</p>
-            </div>
-            <div class="border d-inline-block px-3 py-2 rounded-3 hover:scale-105">
-                <p>Git</p>
-            </div>
+            }
         </div>
     </div>
 </div>

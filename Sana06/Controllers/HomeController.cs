@@ -13,9 +13,30 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    private List<Skill> GetSkills()
+    {
+        return new List<Skill>
+        {
+            new Skill { Name = "JavaScript", Level = "Advanced", Range = 3 },
+            new Skill { Name = "HTML", Level = "Advanced", Range = 3 },
+            new Skill { Name = "CSS/TailwindCss", Level = "Intermediate", Range = 2 },
+            new Skill { Name = "C#", Level = "Intermediate", Range = 2 },
+            new Skill { Name = "ASP.NET", Level = "Beginner", Range = 1 },
+            new Skill { Name = "React", Level = "Beginner", Range = 1 },
+            new Skill { Name = "Git", Level = "Intermediate", Range = 2 },
+        };
+    }
+
     public IActionResult Index()
     {
-        return View();
+        var skills = GetSkills();
+        return View(skills);
+    }
+
+    public IActionResult Skills()
+    {
+        var skills = GetSkills();
+        return View(skills);
     }
 
     public IActionResult Privacy()

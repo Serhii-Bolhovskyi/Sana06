@@ -1,0 +1,22 @@
+@model List<Skill>
+
+<h2 class="text-center">My skills</h2>
+<ul class="d-flex flex-column gap-4 justify-content-center align-items-center text-center">
+    @foreach (var skill in Model)
+    {
+        <li class="skill text-white d-flex flex-column justify-content-center align-items-center fs-4 gap-3 rounded-3 py-2">
+            <p>@skill.Name</p>
+            <div class="d-flex gap-2 justify-content-center align-items-center">
+                @for (int i = 0; i < 4; i++)
+                {
+                    string fillColor = i < skill.Range ? "#FF9800" : "none";
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#FF9800" fill="@fillColor">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                }
+            </div>
+            <span>@skill.Level</span>
+        </li>
+    }
+</ul>
