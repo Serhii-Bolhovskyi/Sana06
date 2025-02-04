@@ -39,6 +39,40 @@ public class HomeController : Controller
         return View(skills);
     }
 
+    public IActionResult Projects()
+    {
+        var projects = new List<Project>
+        {
+            new Project()
+            {
+                Name = "Movie Database Explorer",
+                Description = "Pet project that represents a movie",
+                Url = "https://github.com/Serhii-Bolhovskyi/movie-database-explore-project",
+                Technologies = new List<Technology>
+                {
+                    new Technology { Name = "JS", Icon = "/images/js.svg" },
+                    new Technology { Name = "TailwindCss", Icon = "/images/tail.svg" },
+                    new Technology { Name = "API", Icon = "/images/api.svg" },
+                    new Technology { Name = "HTML", Icon = "/images/html.svg" },
+                    
+                }
+            },
+            new Project()
+            {
+            Name = "Green Spaces",
+            Description = "Freelance project for garden bussiness",
+            Url = "https://greenspaces.netlify.app/",
+            Technologies = new List<Technology>
+            {
+                new Technology { Name = "JS", Icon = "/images/js.svg" },
+                new Technology { Name = "TailwindCss", Icon = "/images/tail.svg" },
+                new Technology { Name = "HTML", Icon = "/images/html.svg" },
+            }
+        }
+        };
+        return View(projects);
+    }
+
     public IActionResult Privacy()
     {
         return View();

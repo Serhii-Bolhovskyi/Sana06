@@ -1,0 +1,18 @@
+@model List<Project>
+
+<h2 class="text-center">My skills</h2>
+<ul class="d-flex flex-column gap-3  text-center">
+    @foreach (var project in Model)
+    {
+        <li class="proj d-flex flex-column text-start fs-4 gap-3 rounded-3 py-2 px-4">
+            <a href="@project.Url" target="_blank" rel="noopener noreferrer">@project.Name</a>
+            <p class="fs-4 opacity-75">@project.Description</p>
+            <div class="d-flex gap-2">
+                @foreach (var tech in project.Technologies)
+                {
+                    <img src="@tech.Icon" alt="@tech.Name" title="@tech.Name"/>
+                }
+            </div>
+        </li>
+    }
+</ul>
