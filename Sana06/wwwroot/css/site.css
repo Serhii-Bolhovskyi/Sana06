@@ -47,4 +47,6 @@ body {
 
 .proj {
   background-color: #f8f9fa;
+  max-width: 600px;
+  width: 100%;
 }
