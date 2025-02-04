@@ -1,0 +1,33 @@
+@model EducationViewModel
+
+<h2 class="text-center mb-2">Education</h2>
+<ul class="d-flex flex-column gap-3  text-center">
+    @foreach (var edu in Model.Education)
+    {
+        <li class="proj d-flex flex-column text-start fs-4 gap-3 rounded-3 py-2 px-4">
+            <h2>@edu.Name</h2>
+            @* <a href="@project.Url" target="_blank" rel="noopener noreferrer">@project.Name</a> *@
+            <p class="fs-4 opacity-75">@edu.Institution</p>
+            <span>@edu.Year</span>
+            <span>@edu.Status</span>
+        </li>
+    }
+</ul>
+
+<h2 class="text-center mb-2">Course</h2>
+<ul class="d-flex flex-column gap-3  text-center">
+    @foreach (var course in Model.Courses)
+    {
+        <li class="proj d-flex flex-column text-start fs-4 gap-3 rounded-3 py-2 px-4">
+            <h2>@course.Name</h2>
+            @* <a href="@project.Url" target="_blank" rel="noopener noreferrer">@project.Name</a> *@
+            <p class="fs-4 opacity-75">@course.Platform</p>
+            <span>@course.Year</span>
+            <span>@course.Status</span>
+            @foreach (var tech in course.Technologies)
+            {
+                <p>@tech</p>
+            }
+        </li>
+    }
+</ul>

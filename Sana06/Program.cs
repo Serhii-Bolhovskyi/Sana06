@@ -5,6 +5,12 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+app.MapControllerRoute(
+    name: "education",
+    pattern: "education",
+    defaults: new { controller = "Education", action = "Index" }
+);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
