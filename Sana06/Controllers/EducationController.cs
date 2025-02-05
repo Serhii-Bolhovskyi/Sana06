@@ -38,4 +38,17 @@ public class ExperienceController : Controller
         };
         return View(model);
     }
+
+    public IActionResult Cerf()
+    {
+        var cerf = new List<Certification>()
+        {
+            new Certification
+            {
+                ImgUrl = "https://www.udemy.com/certificate/UC-5dffcd83-8b5b-4489-8fc1-2b09236f3a8c/",
+                CertificationImg = "/images/tail-cerf.jpg"
+            }
+        };
+        return View(cerf);
+    }
 }

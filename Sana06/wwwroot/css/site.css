@@ -55,3 +55,18 @@ body {
   max-width: 600px;
   width: 100%;
 }
+
+.cert-item {
+  width: 400px; /* Фіксована ширина для рівномірного відображення */
+  transition: transform 0.3s ease-in-out;
+}
+
+.cert-item:hover {
+  transform: scale(1.05); /* Збільшення при наведенні */
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,0 +1,14 @@
+@model List<Certification>
+
+<h2 class="text-center mb-4">My Certifiction</h2>
+
+<ul class="list-unstyled d-flex flex-wrap justify-content-start gap-4">
+    @foreach (var cert in Model)
+    {
+    <li class="cert-item shadow-lg rounded-3 overflow-hidden">
+        <a href="@cert.ImgUrl" target="_blank">
+            <img src="@cert.CertificationImg" alt="Certification" class="img-fluid rounded-3">
+        </a>
+    </li>
+    }
+</ul>
